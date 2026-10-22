@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Hardbop';
+    src: local('Hardbop'), local('Syne-ExtraBold'), url('https://fonts.gstatic.com/s/syne/v22/8vIJ7w4qM01E3yG21I8R06T3.woff2') format('woff2');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'HeadingNow';
+    src: local('HeadingNow'), local('Inter-Bold'), url('https://fonts.gstatic.com/s/inter/v18/UcbC3FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+    font-weight: 400 700;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-heading antialiased selection:bg-primary selection:text-tertiary;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom design token typography styles according to design.md */
+.headline-display {
+  font-family: 'Hardbop', 'Syne', sans-serif;
+  font-size: clamp(60px, 15vw, 300px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0px;
+}
+
+.headline-lg {
+  font-family: 'Hardbop', 'Syne', sans-serif;
+  font-size: clamp(48px, 10vw, 163px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}
+
+.headline-md {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: clamp(36px, 6vw, 88px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0px;
+}
+
+.headline-sm {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+
+.body-lg {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: -0.78px;
+}
+
+.body-md {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.body-sm {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.label-lg {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.label-md {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.label-sm {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+.overline {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: 'HeadingNow', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0px;
+}
+
+/* Design components spec from design.md */
+.btn-primary {
+  background-color: #2563EB; /* Confident primary blue CTA button */
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 8px 16px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #5B3825;
+  border: 1px solid #5B3825;
+  border-radius: 4px;
+  padding: 8px 16px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: rgba(91, 56, 37, 0.08);
+}
+
+.btn-link {
+  background-color: transparent;
+  color: #5B3825;
+  border-radius: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.btn-link:hover {
+  color: #2563EB;
+}
+
+.card-container {
+  background-color: #FFFFFF;
+  color: #111827;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #E5E7EB;
+}
+
+.input-field {
+  background-color: #FFFFFF;
+  color: #111827;
+  border-radius: 4px;
+  padding: 8px 12px;
+  border: 1px solid #E5E7EB;
+  outline: none;
+  font-size: 14px;
+}
+.input-field:focus {
+  border-color: #2563EB;
+  ring: 2px solid rgba(37, 99, 235, 0.2);
+}
+
+.chip-tag {
+  background-color: #5B3825;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
