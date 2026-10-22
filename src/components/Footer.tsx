@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               mshopy
             </span>
             <p className="body-sm text-neutral-300 leading-relaxed">
-              mshopy is a modern e-commerce fine art store combining confident blue, warm chocolate accents, and high-contrast editorial art curation.
+              mshopy adalah toko e-commerce fashion modern yang menghadirkan pakaian, sepatu, baju, celana, jaket, dan aksesoris berkualitas tinggi dengan gaya kontemporer.
             </p>
             <div className="flex space-x-4 pt-2">
               <a href="#instagram" className="text-neutral-400 hover:text-primary transition-colors flex items-center space-x-1" aria-label="Social">
@@ -44,14 +44,14 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div>
             <h4 className="label-md font-semibold text-tertiary mb-4 uppercase tracking-wider">
-              Explore Store
+              Kategori Produk
             </h4>
             <ul className="space-y-2 text-sm text-neutral-300">
-              <li><a href="#shop" className="hover:text-primary transition-colors">Wall Art Canvases</a></li>
-              <li><a href="#shop" className="hover:text-primary transition-colors">Architectural Sculptures</a></li>
-              <li><a href="#shop" className="hover:text-primary transition-colors">Archival Giclée Prints</a></li>
-              <li><a href="#shop" className="hover:text-primary transition-colors">B&W Photography</a></li>
-              <li><a href="#new-arrivals" className="hover:text-primary transition-colors">New Releases 2025</a></li>
+              <li><a href="#shop" className="hover:text-primary transition-colors">Baju & Kaos T-Shirt</a></li>
+              <li><a href="#shop" className="hover:text-primary transition-colors">Celana Jeans & Chino</a></li>
+              <li><a href="#shop" className="hover:text-primary transition-colors">Jaket & Outerwear</a></li>
+              <li><a href="#shop" className="hover:text-primary transition-colors">Sepatu & Sneakers</a></li>
+              <li><a href="#shop" className="hover:text-primary transition-colors">Aksesoris Fashion</a></li>
             </ul>
           </div>
 

@@ -21,13 +21,14 @@ describe('mshopy Store Catalog Data & Payments', () => {
     });
   });
 
-  it('contains all defined categories', () => {
-    expect(CATEGORIES.length).toBe(4);
+  it('contains all defined apparel categories', () => {
+    expect(CATEGORIES.length).toBe(5);
     const categoryIds = CATEGORIES.map((c) => c.id);
-    expect(categoryIds).toContain('wall-art');
-    expect(categoryIds).toContain('sculptures');
-    expect(categoryIds).toContain('digital-prints');
-    expect(categoryIds).toContain('photography');
+    expect(categoryIds).toContain('baju');
+    expect(categoryIds).toContain('celana');
+    expect(categoryIds).toContain('jaket');
+    expect(categoryIds).toContain('sepatu');
+    expect(categoryIds).toContain('aksesoris');
   });
 
   it('calculates sale prices correctly if present', () => {

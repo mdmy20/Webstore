@@ -8,23 +8,23 @@ export const TrustSection: React.FC = () => {
   const trustGuarantees = [
     {
       icon: <Award className="w-8 h-8 text-primary" />,
-      title: 'Gallery Certified',
-      description: 'Every work includes a physical Certificate of Authenticity signed by the artist.',
+      title: 'Kualitas Bahan Premium',
+      description: 'Setiap produk baju, celana, dan sepatu menggunakan bahan pilihan bermutu tinggi.',
     },
     {
       icon: <Truck className="w-8 h-8 text-secondary" />,
-      title: 'Museum-Grade Packaging',
-      description: 'Custom wooden crating and reinforced cardboard tubes built for safe worldwide transit.',
+      title: 'Pengiriman Cepat & Aman',
+      description: 'Kemasan rapi dan pengiriman express dengan nomor resi terlacak otomatis.',
     },
     {
       icon: <RefreshCw className="w-8 h-8 text-primary" />,
-      title: '30-Day Art Guarantee',
-      description: 'Love it in your home space or return it within 30 days for a full refund.',
+      title: 'Garansi Tukar Ukuran',
+      description: 'Ukuran tidak pas? Bebas melakukan penukaran ukuran dalam waktu 14 hari.',
     },
     {
       icon: <ShieldCheck className="w-8 h-8 text-secondary" />,
-      title: 'Collector Buyer Support',
-      description: 'Direct consultation with our gallery curators for custom dimensions and framing.',
+      title: 'Layanan Pelanggan 24/7',
+      description: 'Tim support mshopy siap membantu rekomendasi ukuran dan pertanyaan pesanan.',
     },
   ];
 
@@ -44,14 +44,14 @@ export const TrustSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-neutral">
           <div>
             <span className="caption uppercase tracking-widest text-secondary font-bold block mb-1">
-              CURATED MEDIUMS
+              KATEGORI POPULER
             </span>
             <h2 className="headline-sm font-bold text-on-surface">
-              Explore Featured Categories
+              Jelajahi Koleksi Fashion
             </h2>
           </div>
           <p className="body-sm text-neutral-600 max-w-md mt-2 md:mt-0">
-            Select a medium below to filter our high-contrast catalog of original gallery works.
+            Pilih kategori di bawah ini untuk melihat koleksi pakaian, sepatu, baju, celana, jaket, dan aksesoris.
           </p>
         </div>
 

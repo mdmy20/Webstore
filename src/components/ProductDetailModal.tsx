@@ -147,34 +147,34 @@ export const ProductDetailModal: React.FC = () => {
           {selectedProduct.sizes && selectedProduct.sizes.length > 0 && (
             <div>
               <label className="caption uppercase font-bold text-on-surface block mb-2">
-                Select Size Option
+                Pilih Ukuran
               </label>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {selectedProduct.sizes.map((sz) => (
                   <button
                     key={sz}
                     onClick={() => setSelectedSize(sz)}
-                    className={`py-2 px-3 text-xs font-medium rounded-sm border text-left flex items-center justify-between transition-colors ${
+                    className={`py-2 px-3 text-xs font-medium rounded-sm border text-center flex items-center justify-between transition-colors ${
                       selectedSize === sz
                         ? 'border-primary bg-primary/5 text-primary font-semibold'
                         : 'border-neutral text-on-surface hover:border-neutral-400'
                     }`}
                   >
                     <span>{sz}</span>
-                    {selectedSize === sz && <Check className="w-4 h-4 text-primary" />}
+                    {selectedSize === sz && <Check className="w-3.5 h-3.5 text-primary" />}
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Variant Selectors: Frame */}
+          {/* Variant Selectors: Color / Finish */}
           {selectedProduct.frames && selectedProduct.frames.length > 0 && (
             <div>
               <label className="caption uppercase font-bold text-on-surface block mb-2">
-                Select Frame Finish
+                Pilih Warna / Varian
               </label>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {selectedProduct.frames.map((frm) => (
                   <button
                     key={frm}

@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileNav }) => {
                 mshopy
               </span>
               <span className="caption text-secondary font-semibold uppercase tracking-widest block -mt-1">
-                FINE ART & STORE
+                MODERN FASHION & APPAREL
               </span>
             </button>
           </div>
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileNav }) => {
               </div>
               <input
                 type="text"
-                placeholder="Search artworks, artists, or mediums..."
+                placeholder="Cari baju, celana, sepatu, jaket, atau aksesoris..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}

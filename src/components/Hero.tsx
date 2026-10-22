@@ -25,21 +25,21 @@ export const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-neutral mb-8">
           <div className="flex items-center space-x-3">
             <span className="chip-tag bg-secondary text-tertiary">
-              AUTUMN COLLECTION 2025
+              NEW FASHION DROP 2025
             </span>
             <span className="overline text-on-surface/70 hidden sm:inline">
-              LIMITED EDITION FINE ART & SCULPTURES
+              MODERN STREETWEAR, APPAREL & FOOTWEAR
             </span>
           </div>
 
           <div className="flex items-center space-x-6 text-xs text-on-surface/80">
             <span className="flex items-center space-x-1 font-medium">
               <ShieldCheck className="w-4 h-4 text-primary" />
-              <span>Certified Authenticity</span>
+              <span>100% Original Products</span>
             </span>
             <span className="flex items-center space-x-1 font-medium hidden md:flex">
               <Truck className="w-4 h-4 text-secondary" />
-              <span>Global Express Shipping</span>
+              <span>Pengiriman Cepat Seluruh Indonesia</span>
             </span>
           </div>
         </div>
@@ -51,18 +51,18 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-1">
               <span className="overline text-secondary font-bold tracking-widest block">
-                CURATED ARTIST DROP
+                KOLEKSI FASHION TERBARU
               </span>
               <h1 className="font-hardbop text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-on-surface uppercase tracking-tighter leading-none">
                 mshopy <br />
                 <span className="text-primary underline decoration-secondary decoration-4 underline-offset-8">
-                  STORE
+                  STYLE
                 </span>
               </h1>
             </div>
 
             <p className="body-lg text-on-surface/80 max-w-xl font-normal leading-relaxed">
-              Expressive canvas art, architectural stoneware sculptures, and museum-grade archival prints designed with confident blue and rich chocolate warm contrast.
+              Temukan tren baju, celana jeans & chino, jaket outerwear, sepatu sneakers, dan aksoris pilihan terbaik dengan identitas biru tegas dan aksen cokelat hangat.
             </p>
 
             {/* Action Buttons */}
@@ -71,19 +71,19 @@ export const Hero: React.FC = () => {
                 onClick={handleShopNow}
                 className="btn-primary bg-primary hover:bg-blue-700 text-tertiary px-8 py-3 rounded-sm font-semibold text-base shadow-sm flex items-center space-x-3 transition-all transform hover:-translate-y-0.5"
               >
-                <span>SHOP THE COLLECTION</span>
+                <span>BELANJA SEKARANG</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
 
               <button
                 onClick={() => {
-                  setSelectedCategory('wall-art');
+                  setSelectedCategory('baju');
                   handleShopNow();
                 }}
                 className="btn-secondary text-secondary border-secondary hover:bg-secondary/10 px-6 py-3 rounded-sm font-semibold text-base flex items-center space-x-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>EXPLORE WALL ART</span>
+                <span>KOLEKSI BAJU & KAOS</span>
               </button>
             </div>
 
@@ -154,7 +154,7 @@ export const Hero: React.FC = () => {
               <div className="absolute -bottom-6 -right-2 bg-secondary text-tertiary p-4 rounded-md shadow-lg border border-secondary/30 hidden sm:flex items-center space-x-3 transform rotate-2">
                 <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-wider">
-                  Hand-crafted & Signed Canvas
+                  Bahan Premium & Ukuran Nyaman
                 </span>
               </div>
 
