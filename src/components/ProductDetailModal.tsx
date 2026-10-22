@@ -223,16 +223,26 @@ export const ProductDetailModal: React.FC = () => {
             </button>
           </div>
 
-          {/* Trust Highlights */}
-          <div className="grid grid-cols-2 gap-2 pt-2 text-xs text-neutral-500">
-            <span className="flex items-center space-x-1">
-              <Truck className="w-3.5 h-3.5 text-secondary" />
-              <span>Free Worldwide Shipping</span>
-            </span>
-            <span className="flex items-center space-x-1">
-              <RefreshCw className="w-3.5 h-3.5 text-primary" />
-              <span>30-Day Certificate Return</span>
-            </span>
+          {/* Trust Highlights & Payment Badges */}
+          <div className="space-y-3 pt-2">
+            <div className="grid grid-cols-2 gap-2 text-xs text-neutral-500">
+              <span className="flex items-center space-x-1">
+                <Truck className="w-3.5 h-3.5 text-secondary" />
+                <span>Free Worldwide Shipping</span>
+              </span>
+              <span className="flex items-center space-x-1">
+                <RefreshCw className="w-3.5 h-3.5 text-primary" />
+                <span>30-Day Certificate Return</span>
+              </span>
+            </div>
+
+            <div className="flex items-center space-x-2 pt-2 border-t border-neutral/60 text-[10px] text-neutral-500">
+              <span className="font-semibold uppercase tracking-wider text-neutral-400">Secure Checkout:</span>
+              <span className="px-1.5 py-0.5 bg-neutral-100 rounded border border-neutral font-mono font-bold text-neutral-700">Card</span>
+              <span className="px-1.5 py-0.5 bg-blue-50 text-blue-800 rounded border border-blue-200 font-bold">PayPal</span>
+              <span className="px-1.5 py-0.5 bg-neutral-900 text-white rounded font-bold">Pay</span>
+              <span className="px-1.5 py-0.5 bg-neutral-100 text-neutral-800 rounded border border-neutral font-bold">GPay</span>
+            </div>
           </div>
 
         </div>

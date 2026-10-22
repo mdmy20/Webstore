@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { PRODUCTS, CATEGORIES } from './products';
 
-describe('Follow Art Catalog Data', () => {
+describe('mshopy Store Catalog Data & Payments', () => {
   it('contains valid product catalog with design tokens alignment', () => {
     expect(PRODUCTS).toBeDefined();
     expect(PRODUCTS.length).toBeGreaterThan(0);

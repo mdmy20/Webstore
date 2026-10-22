@@ -42,10 +42,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileNav }) => {
               className="text-left group"
             >
               <span className="font-hardbop text-2xl sm:text-3xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors block">
-                FOLLOW ART
+                mshopy
               </span>
               <span className="caption text-secondary font-semibold uppercase tracking-widest block -mt-1">
-                GALLERY & STORE
+                FINE ART & STORE
               </span>
             </button>
           </div>

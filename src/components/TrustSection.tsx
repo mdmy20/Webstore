@@ -98,7 +98,7 @@ export const TrustSection: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="overline text-secondary font-bold tracking-widest block mb-1">
-              THE FOLLOW ART PROMISE
+              THE MSHOPY PROMISE
             </span>
             <h3 className="headline-sm font-bold text-on-surface">
               Built for Discerning Art Collectors

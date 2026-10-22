@@ -45,6 +45,8 @@ export interface CartItem {
   selectedFrame?: string;
 }
 
+export type PaymentMethod = 'credit_card' | 'paypal' | 'apple_pay' | 'google_pay';
+
 export interface ShippingDetails {
   fullName: string;
   email: string;
@@ -52,6 +54,7 @@ export interface ShippingDetails {
   city: string;
   postalCode: string;
   country: string;
+  paymentMethod?: PaymentMethod;
 }
 
 export interface Order {
@@ -61,6 +64,7 @@ export interface Order {
   shippingFee: number;
   total: number;
   shippingDetails: ShippingDetails;
+  paymentMethod: PaymentMethod;
   date: string;
   status: 'Processing' | 'Shipped' | 'Delivered';
 }

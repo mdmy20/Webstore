@@ -21,12 +21,12 @@ export const CartDrawer: React.FC = () => {
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === 'FOLLOWART10') {
+    if (promoCode.trim().toUpperCase() === 'MSHOPY10' || promoCode.trim().toUpperCase() === 'FOLLOWART10') {
       const disc = Math.round(cartTotal * 0.1);
       setDiscountAmount(disc);
       setPromoApplied(true);
     } else if (promoCode.trim().length > 0) {
-      alert('Invalid Promo Code. Try "FOLLOWART10" for 10% off.');
+      alert('Invalid Promo Code. Try "MSHOPY10" for 10% off.');
     }
   };
 
@@ -165,7 +165,7 @@ export const CartDrawer: React.FC = () => {
                   <Tag className="w-4 h-4 text-neutral-400 absolute left-3 top-2.5" />
                   <input
                     type="text"
-                    placeholder="Promo code (e.g. FOLLOWART10)"
+                    placeholder="Promo code (e.g. MSHOPY10)"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     className="input-field w-full text-xs pl-9 py-2 border-neutral"
@@ -181,7 +181,7 @@ export const CartDrawer: React.FC = () => {
 
               {promoApplied && (
                 <p className="text-xs text-green-600 font-semibold flex items-center justify-between">
-                  <span>Promo Code FOLLOWART10 Applied</span>
+                  <span>Promo Code MSHOPY10 Applied</span>
                   <span>-${discountAmount} USD</span>
                 </p>
               )}
@@ -216,6 +216,16 @@ export const CartDrawer: React.FC = () => {
                 <span>PROCEED TO DEMO CHECKOUT</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+
+              {/* Payment Method Badges */}
+              <div className="flex items-center justify-center space-x-2 pt-2 border-t border-neutral/60 text-[10px] text-neutral-500">
+                <span className="font-semibold uppercase tracking-wider text-neutral-400">Accepted:</span>
+                <span className="px-1.5 py-0.5 bg-neutral-100 rounded border border-neutral font-mono font-bold text-neutral-700">VISA</span>
+                <span className="px-1.5 py-0.5 bg-neutral-100 rounded border border-neutral font-mono font-bold text-neutral-700">MC</span>
+                <span className="px-1.5 py-0.5 bg-blue-50 text-blue-800 rounded border border-blue-200 font-bold">PayPal</span>
+                <span className="px-1.5 py-0.5 bg-neutral-900 text-white rounded font-bold">Pay</span>
+                <span className="px-1.5 py-0.5 bg-neutral-100 text-neutral-800 rounded border border-neutral font-bold">GPay</span>
+              </div>
 
               <p className="text-[11px] text-center text-neutral-400 flex items-center justify-center space-x-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-secondary" />

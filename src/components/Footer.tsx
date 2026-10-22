@@ -23,10 +23,10 @@ export const Footer: React.FC = () => {
           {/* Brand & Manifesto */}
           <div className="md:col-span-1 space-y-4">
             <span className="font-hardbop text-2xl font-bold tracking-tight text-tertiary block">
-              FOLLOW ART
+              mshopy
             </span>
             <p className="body-sm text-neutral-300 leading-relaxed">
-              Modern e-commerce art gallery combining confident blue, warm chocolate accents, and high-contrast editorial art curation.
+              mshopy is a modern e-commerce fine art store combining confident blue, warm chocolate accents, and high-contrast editorial art curation.
             </p>
             <div className="flex space-x-4 pt-2">
               <a href="#instagram" className="text-neutral-400 hover:text-primary transition-colors flex items-center space-x-1" aria-label="Social">
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
         {/* Bottom utility bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-400 space-y-4 sm:space-y-0">
           <div>
-            <p>© {new Date().getFullYear()} Follow Art Gallery Inc. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} mshopy Gallery Inc. All rights reserved.</p>
           </div>
           <div className="flex space-x-6">
             <a href="#privacy" className="hover:text-surface">Privacy Policy</a>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { X, ShieldCheck, CheckCircle2, PackageCheck, AlertCircle } from 'lucide-react';
+import { X, ShieldCheck, CheckCircle2, PackageCheck, AlertCircle, CreditCard, Wallet, Smartphone } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
-import type { ShippingDetails, Order } from '../types/store';
+import type { ShippingDetails, Order, PaymentMethod } from '../types/store';
 
 export const CheckoutModal: React.FC = () => {
   const {
@@ -12,6 +12,8 @@ export const CheckoutModal: React.FC = () => {
     placeOrder,
   } = useStore();
 
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('credit_card');
+
   const [formData, setFormData] = useState<ShippingDetails>({
     fullName: 'Jane Collector',
     email: 'jane.collector@example.com',
@@ -19,6 +21,7 @@ export const CheckoutModal: React.FC = () => {
     city: 'New York',
     postalCode: '10001',
     country: 'United States',
+    paymentMethod: 'credit_card',
   });
 
   const [completedOrder, setCompletedOrder] = useState<Order | null>(null);
@@ -31,7 +34,8 @@ export const CheckoutModal: React.FC = () => {
 
   const handleSubmitOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    const newOrder = placeOrder(formData);
+    const finalFormData = { ...formData, paymentMethod };
+    const newOrder = placeOrder(finalFormData);
     setCompletedOrder(newOrder);
   };
 
@@ -83,6 +87,10 @@ export const CheckoutModal: React.FC = () => {
                 <span className="text-secondary">{completedOrder.shippingDetails.fullName}</span>
               </p>
               <p>{completedOrder.shippingDetails.address}, {completedOrder.shippingDetails.city}, {completedOrder.shippingDetails.country}</p>
+              <p className="flex justify-between text-neutral-600">
+                <span>Payment Method:</span>
+                <span className="font-semibold text-on-surface uppercase">{completedOrder.paymentMethod.replace('_', ' ')}</span>
+              </p>
               <p className="pt-2 border-t border-neutral flex justify-between font-bold text-sm">
                 <span>Total Amount Paid (Demo):</span>
                 <span className="text-primary">${completedOrder.total} USD</span>
@@ -239,13 +247,112 @@ export const CheckoutModal: React.FC = () => {
                 </div>
               </div>
 
+              {/* Payment Method Selector */}
+              <div className="space-y-3 pt-2 border-t border-neutral">
+                <label className="caption font-bold text-on-surface block">
+                  Select Payment Method *
+                </label>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('credit_card')}
+                    className={`p-3 border rounded-sm flex flex-col items-center justify-center text-xs font-bold space-y-1 transition-all ${
+                      paymentMethod === 'credit_card'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-neutral bg-surface text-neutral-600 hover:border-neutral-400'
+                    }`}
+                  >
+                    <CreditCard className="w-5 h-5" />
+                    <span>Credit Card</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('paypal')}
+                    className={`p-3 border rounded-sm flex flex-col items-center justify-center text-xs font-bold space-y-1 transition-all ${
+                      paymentMethod === 'paypal'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-neutral bg-surface text-neutral-600 hover:border-neutral-400'
+                    }`}
+                  >
+                    <Wallet className="w-5 h-5" />
+                    <span>PayPal</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('apple_pay')}
+                    className={`p-3 border rounded-sm flex flex-col items-center justify-center text-xs font-bold space-y-1 transition-all ${
+                      paymentMethod === 'apple_pay'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-neutral bg-surface text-neutral-600 hover:border-neutral-400'
+                    }`}
+                  >
+                    <Smartphone className="w-5 h-5" />
+                    <span>Apple Pay</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('google_pay')}
+                    className={`p-3 border rounded-sm flex flex-col items-center justify-center text-xs font-bold space-y-1 transition-all ${
+                      paymentMethod === 'google_pay'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-neutral bg-surface text-neutral-600 hover:border-neutral-400'
+                    }`}
+                  >
+                    <Smartphone className="w-5 h-5 text-green-600" />
+                    <span>Google Pay</span>
+                  </button>
+                </div>
+
+                {/* Sub-form details per payment method */}
+                {paymentMethod === 'credit_card' && (
+                  <div className="p-3 bg-neutral-50 border border-neutral rounded-sm space-y-2 text-xs">
+                    <input
+                      type="text"
+                      placeholder="Card Number (e.g. 4532 •••• •••• 8892)"
+                      className="input-field w-full text-xs"
+                      defaultValue="4532 8892 1092 8892"
+                    />
+                    <div className="grid grid-cols-2 gap-2">
+                      <input type="text" placeholder="MM/YY" className="input-field w-full text-xs" defaultValue="12/28" />
+                      <input type="text" placeholder="CVC" className="input-field w-full text-xs" defaultValue="382" />
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod === 'paypal' && (
+                  <div className="p-3 bg-blue-50 border border-blue-200 rounded-sm text-xs text-blue-900 flex items-center justify-between">
+                    <span>Redirect to PayPal One-Touch Express Checkout</span>
+                    <span className="font-bold text-blue-700">PayPal Active</span>
+                  </div>
+                )}
+
+                {paymentMethod === 'apple_pay' && (
+                  <div className="p-3 bg-neutral-900 text-surface rounded-sm text-xs flex items-center justify-between">
+                    <span>Pay with Touch ID / Face ID via Apple Pay</span>
+                    <span className="font-bold">Pay</span>
+                  </div>
+                )}
+
+                {paymentMethod === 'google_pay' && (
+                  <div className="p-3 bg-neutral-100 border border-neutral-300 text-neutral-900 rounded-sm text-xs flex items-center justify-between">
+                    <span>Google Pay Express Checkout Linked</span>
+                    <span className="font-bold text-blue-600">GPay</span>
+                  </div>
+                )}
+
+              </div>
+
               <div className="pt-4">
                 <button
                   type="submit"
                   className="w-full btn-primary bg-primary hover:bg-blue-700 text-tertiary py-3 rounded-sm font-semibold flex items-center justify-center space-x-2"
                 >
                   <PackageCheck className="w-5 h-5" />
-                  <span>COMPLETE DEMO ORDER</span>
+                  <span>COMPLETE DEMO ORDER ({paymentMethod.toUpperCase().replace('_', ' ')})</span>
                 </button>
               </div>
             </form>

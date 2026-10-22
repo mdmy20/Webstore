@@ -54,9 +54,9 @@ export const Hero: React.FC = () => {
                 CURATED ARTIST DROP
               </span>
               <h1 className="font-hardbop text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-on-surface uppercase tracking-tighter leading-none">
-                FOLLOW <br />
+                mshopy <br />
                 <span className="text-primary underline decoration-secondary decoration-4 underline-offset-8">
-                  ART
+                  STORE
                 </span>
               </h1>
             </div>

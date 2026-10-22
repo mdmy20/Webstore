@@ -39,7 +39,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Load cart from localStorage if available
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('follow_art_cart');
+      const saved = localStorage.getItem('mshopy_cart');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -55,7 +55,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     try {
-      localStorage.setItem('follow_art_cart', JSON.stringify(cart));
+      localStorage.setItem('mshopy_cart', JSON.stringify(cart));
     } catch (e) {
       console.error(e);
     }
@@ -156,12 +156,13 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const total = subtotal + shippingFee;
 
     const newOrder: Order = {
-      id: `FA-ORD-${Math.floor(100000 + Math.random() * 900000)}`,
+      id: `MSHOPY-ORD-${Math.floor(100000 + Math.random() * 900000)}`,
       items: [...cart],
       subtotal,
       shippingFee,
       total,
       shippingDetails,
+      paymentMethod: shippingDetails.paymentMethod || 'credit_card',
       date: new Date().toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',

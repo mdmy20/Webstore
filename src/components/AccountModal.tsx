@@ -5,7 +5,7 @@ import { useStore } from '../context/StoreContext';
 export const AccountModal: React.FC = () => {
   const { isAccountModalOpen, setIsAccountModalOpen, orders } = useStore();
   const [activeTab, setActiveTab] = useState<'profile' | 'orders' | 'wishlist'>('profile');
-  const [userEmail, setUserEmail] = useState('collector@followart.com');
+  const [userEmail, setUserEmail] = useState('collector@mshopy.com');
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   if (!isAccountModalOpen) return null;
